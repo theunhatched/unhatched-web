@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: unhatched-web
+    env: static
+    plan: starter
+    buildCommand: npm install; npm run build; npm run next export
+    staticPublishPath: out
+    pullRequestPreviewsEnabled: true
+    envVars:
+      - key: NODE_ENV
+        value: production
